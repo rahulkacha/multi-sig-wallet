@@ -1,4 +1,4 @@
-# Multi-Signature Wallet Contract
+# Multi-Signature Wallet
 
 ## Overview
 
