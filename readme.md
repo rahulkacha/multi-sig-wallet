@@ -97,8 +97,6 @@ Emitted when a transaction is executed.
 
 To deploy the contract, use a tool like Truffle or Hardhat with a suitable Ethereum testnet or mainnet. Ensure that you provide the initial list of owners during deployment.
 
-## Integration
-
 ## Integration with an ERC20 Token
 
 ### Overview
