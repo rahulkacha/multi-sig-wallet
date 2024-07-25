@@ -13,6 +13,7 @@ This Solidity contract implements a Multi-Signature Wallet, a type of smart cont
 - [Events](#events)
 - [Requirements](#requirements)
 - [Deployment](#deployment)
+- [Integration with an ERC20 Token](#Integration)
 - [License](#license)
 
 ## Features
@@ -87,7 +88,18 @@ Emitted when a transaction is confirmed.
 
 Emitted when a transaction is executed.
 
-## Integration with ERC20 Token Contract
+## Requirements
+
+- **Solidity Version**: ^0.8.2
+- **OpenZeppelin Contracts**: ^4.0.0 (for `Ownable`)
+
+## Deployment
+
+To deploy the contract, use a tool like Truffle or Hardhat with a suitable Ethereum testnet or mainnet. Ensure that you provide the initial list of owners during deployment.
+
+## Integration
+
+## Integration with an ERC20 Token
 
 ### Overview
 
@@ -143,17 +155,8 @@ contract Wallet {
 
     // Additional code...
 }
-
-## Requirements
-
-- **Solidity Version**: ^0.8.2
-- **OpenZeppelin Contracts**: ^4.0.0 (for `Ownable`)
-
-## Deployment
-
-To deploy the contract, use a tool like Truffle or Hardhat with a suitable Ethereum testnet or mainnet. Ensure that you provide the initial list of owners during deployment.
+```
 
 ## License
 
 This contract is licensed under the [GPL-3.0 License](https://opensource.org/licenses/GPL-3.0).
-```
