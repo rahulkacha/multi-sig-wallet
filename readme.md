@@ -107,7 +107,7 @@ The Multi-Signature Wallet contract can be integrated with an ERC20 token contra
 
 To integrate the Multi-Signature Wallet with an ERC20 token contract, follow these general steps:
 
-1. **Deploy the ERC20 Token Contract**: Ensure that the ERC20 token contract (e.g., `StandardToken`) is deployed on the Ethereum network.
+1. **Deploy the ERC20 Token Contract**: Ensure that the ERC20 token contract (e.g., [`StandardToken`](https://github.com/rahulkacha/standard-token/)) is deployed on the Ethereum network.
 
 2. **Update the Multi-Signature Wallet Contract**:
    - **Reference ERC20 Token**: Import and reference the ERC20 token contract in the Multi-Signature Wallet.
