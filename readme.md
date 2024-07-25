@@ -87,6 +87,63 @@ Emitted when a transaction is confirmed.
 
 Emitted when a transaction is executed.
 
+## Integration with ERC20 Token Contract
+
+### Overview
+
+The Multi-Signature Wallet contract can be integrated with an ERC20 token contract to manage token transactions securely. This integration enables the Multi-Signature Wallet to handle both ETH and ERC20 token transfers, enhancing its functionality and flexibility.
+
+### Integration Possibility
+
+To integrate the Multi-Signature Wallet with an ERC20 token contract, follow these general steps:
+
+1. **Deploy the ERC20 Token Contract**: Ensure that the ERC20 token contract (e.g., `StandardToken`) is deployed on the Ethereum network.
+
+2. **Update the Multi-Signature Wallet Contract**:
+   - **Reference ERC20 Token**: Import and reference the ERC20 token contract in the Multi-Signature Wallet.
+   - **Modify Transaction Handling**: Update the `Transaction` struct and related functions to support both ETH and ERC20 token transactions.
+   - **Handle Token Transfers**: Implement logic to transfer tokens using the ERC20 contract's functions.
+
+### Example Implementation
+
+Here is a conceptual example of how the Multi-Signature Wallet contract can be updated to support ERC20 token transactions:
+
+```solidity
+// Import the ERC20 token contract
+import "./StandardToken.sol";
+
+// Modify the Multi-Signature Wallet contract to include ERC20 token interactions
+contract Wallet {
+    struct Transaction {
+        address to;
+        uint256 value;
+        address token; // Address of the ERC20 token contract
+        bool executed;
+        uint256 numConfirmations;
+    }
+
+    // Additional code...
+
+    function generateTransaction(address _to, uint256 _value, address _token) public {
+        // Add support for ERC20 token transactions
+    }
+
+    function executeTransaction(uint256 _txIndex) private {
+        Transaction storage transaction = transactions[_txIndex];
+
+        if (transaction.token == address(0)) {
+            // ETH transfer
+            payable(transaction.to).transfer(transaction.value);
+        } else {
+            // ERC20 token transfer
+            StandardToken token = StandardToken(transaction.token);
+            token.transfer(transaction.to, transaction.value);
+        }
+    }
+
+    // Additional code...
+}
+
 ## Requirements
 
 - **Solidity Version**: ^0.8.2
@@ -99,3 +156,4 @@ To deploy the contract, use a tool like Truffle or Hardhat with a suitable Ether
 ## License
 
 This contract is licensed under the [GPL-3.0 License](https://opensource.org/licenses/GPL-3.0).
+```
