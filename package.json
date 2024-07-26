@@ -1,0 +1,23 @@
+{
+  "name": "multi-sig-wallet",
+  "version": "1.0.0",
+  "description": "This Solidity contract implements a Multi-Signature Wallet, a type of smart contract that requires multiple owners to approve a transaction before it can be executed. This ensures that no single person can unilaterally control the funds, adding an additional layer of security.",
+  "main": "sample.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@nomiclabs/hardhat-ethers": "^2.2.2",
+    "@openzeppelin/contracts": "^5.0.2",
+    "dotenv": "^16.0.3",
+    "ethers": "^5.7.1",
+    "hardhat": "^2.13.0"
+  },
+  "devDependencies": {
+    "solidity-coverage": "^0.8.12"
+  }
+}
